@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-#define TAMANHOTABULEIRO 10
+#define LINHASTABULEIRO 10
+#define COLUNASTABULEIRO 10
 #define TAMANHONAVIO 3
 
 int main() {
@@ -10,9 +11,9 @@ int main() {
 
     //2- criando o tabuleiro
     int tabuleiro[10][10];
-    for (int i = 0; i < TAMANHOTABULEIRO; i++)
+    for (int i = 0; i < LINHASTABULEIRO; i++)
     {
-        for (int j=0; j< TAMANHOTABULEIRO; j++){
+        for (int j=0; j< COLUNASTABULEIRO; j++){
             tabuleiro[i][j] = 0;
         }
     }
@@ -42,7 +43,7 @@ int main() {
             break;
         }
         //1.1.2- incluindo validação para saber se peça está dentro dos limites do tabuleiro
-        else if (i+1 > TAMANHOTABULEIRO || 5+i > TAMANHOTABULEIRO)
+        else if (i+1 > LINHASTABULEIRO || 5+i > COLUNASTABULEIRO)
         {
             printf("Linha %d, coluna %d excede o tamnaho do tabuleiro. \n", i+1, i+5);
             break;
@@ -63,7 +64,7 @@ int main() {
             break;
         }
         //1.2.2- incluindo validação para saber se peça está dentro dos limites do tabuleiro
-        else if (8-i > TAMANHOTABULEIRO || 5+i > TAMANHOTABULEIRO)
+        else if (8-i > LINHASTABULEIRO || 5+i > COLUNASTABULEIRO)
         {
             printf("Linha %d, coluna %d excede o tamnaho do tabuleiro. \n", 8-i, 5+i);
             break;
@@ -76,19 +77,19 @@ int main() {
      
     //2.1- imprimindo cabeçalho
     printf("-- ");
-    for (int i=0; i<TAMANHOTABULEIRO; i++)
+    for (int i=0; i<COLUNASTABULEIRO; i++)
     {
         printf("%c ", cabeçalho[i]);
     }
     printf("\n");
 
     //2.2- imiprimindo tabuleiro
-    for (int i=0; i<TAMANHOTABULEIRO; i++)
+    for (int i=0; i<LINHASTABULEIRO; i++)
     {
         //if-else para que a numeração das linhas fique estetica, com 2 espaços de 1-9 e um espaço na linha 10
         if(i==9){ printf("%d ", i+1);}
         else {printf("%d  ", i+1);}
-        for (int j=0; j<TAMANHOTABULEIRO; j++)
+        for (int j=0; j<COLUNASTABULEIRO; j++)
         {
             printf("%d ", tabuleiro[i][j]);
         }
